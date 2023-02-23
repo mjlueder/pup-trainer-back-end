@@ -23,7 +23,21 @@ const index = async(req, res) => {
 
 const update = async(req, res) => {
   try {
-    
+    // req.body.ownerId = req.user.profile.id
+
+    const dog = await Dog.findByPk(req.params.id)
+    dog.set(req.body)
+    await dog.save()
+
+    // find and return full profile? depends on state...
+
+    // const profile = await Profile.findByPk(
+    //   req.body.profileId,
+    //   { include: [{ model: Vote, as: "votesReceived" }] }
+    // )
+    // res.status(200).json(profile)
+
+    res.status(200).json(dog)
   } catch (error) {
     res.status(500).json(error)
     console.log(error);
