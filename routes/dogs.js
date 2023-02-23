@@ -6,9 +6,11 @@ const { decodeUserFromToken, checkAuth } = middleware
 
 /*---------- Public Routes ----------*/
 
+router.get('/', dogsCtrl.index)
 
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
 router.post('/', checkAuth, dogsCtrl.create)
+router.put('/:id', checkAuth, dogsCtrl.update)
 
 module.exports = router

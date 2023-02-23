@@ -11,7 +11,28 @@ const create = async (req, res) => {
   }
 }
 
+const index = async(req, res) => {
+  try {
+    const dogs = await Dog.findAll()
+    res.status(200).json(dogs)
+  } catch (error) {
+    res.status(500).json(error)
+    console.log(error);
+  }
+}
+
+const update = async(req, res) => {
+  try {
+    
+  } catch (error) {
+    res.status(500).json(error)
+    console.log(error);
+  }
+}
+
+
 module.exports = {
   create,
-
+  index,
+  update,
 }
