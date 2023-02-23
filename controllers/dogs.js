@@ -44,9 +44,21 @@ const update = async(req, res) => {
   }
 }
 
+const deleteDog = async(req, res) => {
+  try {
+    const dog = await Dog.findByPk(req.params.id)
+    await dog.destroy()
+    res.status(200).json(dog)
+  } catch (error) {
+    res.status(500).json(error)
+    console.log(error);
+  }
+}
 
 module.exports = {
   create,
   index,
   update,
+  delete: deleteDog,
+
 }

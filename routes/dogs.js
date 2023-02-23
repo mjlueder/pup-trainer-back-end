@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const dogsCtrl = require('../controllers/dogs.js')
 const middleware = require('../middleware/auth.js')
+const dog = require('../models/dog.js')
 
 const { decodeUserFromToken, checkAuth } = middleware
 
@@ -12,5 +13,6 @@ router.get('/', dogsCtrl.index)
 router.use(decodeUserFromToken)
 router.post('/', checkAuth, dogsCtrl.create)
 router.put('/:id', checkAuth, dogsCtrl.update)
+router.delete('/:id', checkAuth, dogsCtrl.delete)
 
 module.exports = router
