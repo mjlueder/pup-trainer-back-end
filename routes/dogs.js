@@ -14,5 +14,6 @@ router.use(decodeUserFromToken)
 router.post('/', checkAuth, dogsCtrl.create)
 router.put('/:id', checkAuth, dogsCtrl.update)
 router.delete('/:id', checkAuth, dogsCtrl.delete)
+router.put('/:id/add-photo', checkAuth, dogsCtrl.addPhoto);
 
 module.exports = router

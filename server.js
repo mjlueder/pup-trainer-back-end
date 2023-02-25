@@ -15,7 +15,7 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(formData.parse())
 
-app.use('/api/profiles', profilesRouter)
+app.use('/api/profile', profilesRouter)
 app.use('/api/auth', authRouter)
 app.use('/api/dogs', dogsRouter)
 
