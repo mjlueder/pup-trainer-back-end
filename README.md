@@ -1,1 +1,1 @@
-### Learn more about Pup Trainer [here](https://github.com/mjlueder/pup-trainer-front-end)
+### Learn more about Pup Trainer [here!](https://github.com/mjlueder/pup-trainer-front-end)
